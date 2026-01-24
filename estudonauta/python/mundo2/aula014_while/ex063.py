@@ -2,6 +2,14 @@
 
 # 0 – 1 – 1 – 2 – 3 – 5 – 8
 
-cont = x = y = 0
+cont = 0
+x, y = 0, 1
 n = int(input('Digite um número: '))
-
+while cont < n:
+    if cont == n - 1:
+        print(x, end = '')
+        cont += 1
+    else:
+        print(x, end = ' - ')
+        x, y = y, x + y
+        cont += 1
