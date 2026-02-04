@@ -1,2 +1,2 @@
 # coding
-all my resolutions about problems and ideas in any language.
+all my resolutions/studies about problems and ideas in python.
