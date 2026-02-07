@@ -3,13 +3,3 @@
 # da estrutura na tela.
 
 
-sit = dict()
-sit['nome'] = str(input('NOME: ').strip().upper())
-sit['media'] = float(input('MÉDIA: '))
-if sit['media'] < 6:
-    situacao = 'REPROVADO'
-else:
-    situacao = 'APROVADO'
-print(f'NOME: {sit['nome']}\n'
-      f'MÉDIA: {sit['media']}\n'
-      f'SITUAÇÃO: {situacao}')

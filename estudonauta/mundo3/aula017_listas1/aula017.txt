@@ -1,0 +1,41 @@
+VARIÁVEIS COMPOSTAS: LISTAS (pt1)
+
+Tuplas são importantes para guardar itens na memória do computador, todavia, são imutáveis.
+
+Listas podem ser modificadas, mas funcionam com comandos diferentes.
+
+É possível reatribuir um valor com base em sua key:
+
+    lista[3] = 'goiabada'
+
+É possivel adicionar itens a mais, numa lista já definida, em seu final:
+
+    lista.append('melancia') 
+
+É possivel adicionar itens a mais, com base em sua key, em qualquer lugar desejado:
+
+    lista.insert(0, 'repolho')
+
+Podemos apagar a lista de mais de uma maneira (inteira ou apenas itens específicos), inclusive:
+
+    del lanche[2]
+    lanche.pop(2)               # quando usado .pop() puro, apaga o último item sempre.
+    lanche.remove('manjericão') # apaga pelo valor (item), e não pela key.
+
+Válido fazer listas pela função:
+
+    list(range(4, 10))
+
+Possibilidade de organizá-las por um método que as Tuplas rejeitam (exceto a função sorted()):
+
+    lista.sort()                # organiza a lista e seus itens reordenando suas keys.
+    lista.sort(reverse=True)    # pode-se usar o parâmetro reverse para inverter a ordem.
+    sorted(lista)               # apenas apresenta a ordem sem salvar na memória da lista, utilizada para tuplas.
+
+Tomar cuidado ao igualar listas:
+
+    a = []
+    b = a     # toda alteração em a, irá ocorrer em b, já que ao igualar, você endereça as variáveis na mesma memória.
+
+    a = []
+    b = a[:]  # aqui se cria uma cópia da lista, e não o endereçamento na mesma memória, por meio de slicing.

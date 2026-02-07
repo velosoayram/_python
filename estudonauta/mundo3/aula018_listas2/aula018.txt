@@ -1,0 +1,10 @@
+VARIÁVEIS COMPOSTAS: LISTAS (pt2)
+
+Nas variáveis compostas, podemos usufruir do conceito de listas dentro de listas:
+
+    dados = ['Pedro', 25]
+    pessoas = list()
+    pessoas.append(dados[:])
+
+    # pessoas = [['Pedro', 25]]
+    # as keys agora possuem subkeys -> pessoas[0][1]

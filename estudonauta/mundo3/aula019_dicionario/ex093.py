@@ -4,22 +4,3 @@
 # No final, tudo isso será guardado num dicionário, incluindo o total de gols
 # feitos durante o campeonato.
 
-
-t = 0
-gols = []
-jogador = dict()
-jogador['nome'] = str(input('NOME: '))
-jogador['partidas'] = int(input('PARTIDAS: '))
-qtd = jogador['partidas']
-for a in range(qtd):
-    t = int(input(f'{a + 1}o. PARTIDA | GOLS: '))
-    gols.append(t)
-    t += t
-    print('-' * 20)
-for k, v in jogador.items():
-    print(f'{k} = {v}')
-jogador['gols'] = gols[:]
-jogador['golstot'] = t
-print('-'*20)
-print(jogador)
-print('-'*20)

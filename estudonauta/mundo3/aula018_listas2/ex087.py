@@ -3,45 +3,21 @@
 # B) A soma dos valores da terceira coluna.
 # C) O maior valor da segunda linha.
 
-"""
-matriz = [[], [], []]
-soma1 = soma2 = maior = 0
-for linha in range(3):
-    for coluna in range(3):
-        num = int(input(f'VALOR [{linha}, {coluna}]: '))
-        matriz[linha].append(num)
-        if num % 2 == 0:
-            soma1 += num
-        if coluna == 2:
-            soma2 += num
-        if linha == 1:
-            if num > maior:
-                maior = num
-for a in matriz:
-    print(a)
-print(f'SOMA DOS PARES: {soma1}\n'
-      f'SOMA DA TERCEIRA COLUNA: {soma2}\n'
-      f'MAIOR VALOR DA SEGUNDA LINHA: {maior}')
-"""
-
-# guanabara way:
-
-matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-pa = c3 = maior = 0
-for l in range(3):
-    for c in range(3):
-        matriz[l][c] = int(input(f'DIGITE O VALOR [{l},{c}]: '))
-        if matriz[l][c] % 2 == 0:
-            pa += matriz[l][c]
-        if matriz[l][2]:
-            c3 += matriz[l][2]
-        maior = matriz[1][0]
-        if matriz[1][c] > maior:
-            maior = matriz[1][c]
-for l in range(3):
-    for c in range(3):
-        print(f'[{matriz[l][c]:^9}]', end='')
-    print()
-print(f'SOMA DOS PARES: {pa}\n'
-      f'SOMA DA TERCEIRA COLUNA: {c3}\n'
-      f'MAIOR VALOR DA SEGUNDA LINHA: {maior}')
+maior = soma1 = soma2 = 0
+matriz = [[0 for x in range(3)] for x in range(3)]
+for l in range(len(matriz)):
+    for c in range(len(matriz[0])):
+        r = int(input(f'VALOR [{l}, {c}]: '))
+        if r % 2 == 0:
+            soma1 += r
+        if c == 2:
+            soma2 += r
+        if l == 1:
+            if r > maior:
+                maior = r
+        matriz[l][c] = r
+for l in range(len(matriz)):
+    print('-'.join([f'[{matriz[l][c]:^5}]' for c in range(len(matriz))]))
+print(f'SOMA DOS PARES: {soma1}')
+print(f'SOMA DA TERCEIRA COLUNA: {soma2}')
+print(f'MAIOR DA SEGUNDA LINHA: {maior}')

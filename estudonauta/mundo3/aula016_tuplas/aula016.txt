@@ -1,0 +1,62 @@
+VARIÁVEIS COMPOSTAS: TUPLAS
+
+Toda variável simples é um espaço na memória.
+
+A tupla é um tipo de variável composta que pode guardar quantos elementos você queira, desde que definidos previamente.
+
+A manipulação de tuplas é singular, já que seu tamanho e elementos são imutáveis, uma vez que definido.
+
+É possivel utilizar a técnica de slicing com tuplas: 
+
+    lanche = (c1, c2, c3, c4)
+    print(lanche[:2])
+
+Também é válido usar iterações nas tuplas:
+
+    for comidas in lanche:
+    print(f'Eu vou comer {comidas}.')
+
+    for cont in range(0, len(lanche)):
+    print(f'Eu vou comer {lanche[cont]}')
+
+Caso seja necessário mostrar posições, use da segunda maneira, ou use a função enumerate:
+
+    for cont in range(0, len(lanche)):
+    print(f'Eu vou comer {lanche[cont]} ns posição [cont]')
+
+    for numero, item in enumerate(lanche):
+    print(f'POS: {numero} | LANCHE: {item}')
+
+Tuplas não podem ser ordenadas, mas seus itens podem ser apresentadas em ordem:
+
+    tuplas = (z, x, y)
+    print(sorted(tuplas))
+
+    # sorted(tuplas) = (x, y, z)
+
+Tuplas podem realizar concatenação:
+
+    a = (1, 2, 4)
+    b = (3, 2, 9)
+    c = a + b 
+    print(c)
+
+    # c = (1, 2, 4, 3, 2, 9)
+
+Possuem métodos internos, como o .count() e .index():
+    
+    c = (1, 2, 4, 3, 2, 9)
+    print(c.count(2))
+
+    # c.count(2) = 2
+    # c.count(7) = 0
+
+    print(c.index(9))
+
+    # c.index(9) = 5
+
+    print(c.index(2, 2))
+
+    # c.index(2, 2) = 4
+
+A tupla é imutável, mas você pode apagr ela inteira usando del(), mas nunca somente um item específico.

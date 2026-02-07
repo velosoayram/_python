@@ -3,22 +3,22 @@
 # separados os valores pares e ímpares. Mostre os valores pares e ímpares
 # em ordem crescente.
 
-def bubble_sort(l):
-    n = len(l)
-    for x in range(n):
-        for y in range(n - x - 1):
-            if l[y] > l[y + 1]:
-                l[y], l[y + 1] = l[y + 1], l[y]
-lista = list()
-par = list()
-impar = list()
-for a in range(7):
-    lista.append(int(input(f'DIGITE O {a + 1} VALOR: ')))
-bubble_sort(lista)
-for p in lista:
-    if p % 2 == 0:
-        par.append(p)
+# SOL 1: list comprehension
+val = [int(input(f'Digite o {i+1}o valor: ')) for i in range(7)]
+lista = [[p for p in val if p % 2 == 0], [i for i in val if i % 2 != 0]]
+print(f'PARES: {sorted(lista[0])}')
+print(f'IMPARES: {sorted(lista[1])}')
+
+# SOL 2: basic form
+x = [[], []]
+while True:
+    if len(x[0] + x[1]) >= 7:
+        break
     else:
-        impar.append(p)
-print(f'OS PARES: {par}\n'
-      f'OS IMPARES: {impar}')
+        r = int(input())
+        if r % 2 == 0:
+            x[0].append(r)
+        else:
+            x[1].append(r)
+print(f'PARES: {sorted(x[0])}')
+print(f'IMPARES: {sorted(x[1])}')

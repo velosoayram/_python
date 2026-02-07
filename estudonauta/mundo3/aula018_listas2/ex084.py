@@ -4,29 +4,23 @@
 # B) Uma listagem com as pessoas mais pesadas.
 # C) Uma listagem com as pessoas mais leves.
 
-listan = list()
-listap = list()
-pmaior = list()
-pmenor = list()
-while True:
-    listan.append(str(input('NOME: ')))
-    listap.append(float(input('PESO: ')))
-    r = input('CONTINUA [S/N]: ').upper()
-    while r != 'S' and r != 'N':
-        r = input('ERRO - [S/N]: ').upper()
-    if r == 'N':
-        break
-maior = menor = listap[0]
-for a in listap:
-    if a > maior:
-        maior = a
-    if a < menor:
-        menor = a
-for cont in range(len(listap)):
-    if listap[cont] == maior:
-        pmaior.append(listan[cont])
-    if listap[cont] == menor:
-        pmenor.append(listan[cont])
-print(f'{len(listan):.0f} PESSOA(S) CADASTRADA(S).\n'
-      f'O maior peso foi {maior:.2f}KG / {pmaior}\n'
-      f'O menor peso foi {menor:.2f}KG / {pmenor}')
+listaG = []
+listaP = []
+maior = menor = 0
+r = int(input('DESEJA CADASTRAR QUANATAS PESSOAS? '))
+pessoas = [[(input('NOME: ')), int(input('PESO: '))] for i in range(r)]
+for j in range(len(pessoas)):
+    if j == 0:
+        maior = menor = pessoas[j][-1]
+    elif pessoas[j][-1] >= maior:
+        maior = pessoas[j][-1]
+    elif pessoas[j][-1] <= menor:
+        menor = pessoas[j][-1]
+for k in pessoas:
+    if maior == k[-1]:
+        listaG.append(k[0])
+    if menor == k[-1]:
+        listaP.append(k[0])
+print(f'Ao todo, {len(pessoas)} foram pessoas cadastradas.')
+print(f'O maior peso: {maior} KG | {listaG}')
+print(f'O menor peso: {menor} KG | {listaP}')
