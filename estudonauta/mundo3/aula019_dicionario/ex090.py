@@ -3,3 +3,14 @@
 # da estrutura na tela.
 
 
+aluno = dict()
+aluno['nome'] = str(input('NOME: ')).strip().title()
+aluno['media'] = float(input('MEDIA: '))
+if aluno['media'] >= 6:
+    aluno['situacao'] = 'APROVADO(A)'
+elif 4 < aluno['media'] < 6:
+    aluno['situacao'] = 'RECUPERACAO'
+else:
+    aluno['situacao'] = 'REPROVADO'
+for k, v in aluno.items():
+    print(f'{k} = {v}')

@@ -1,2 +1,38 @@
 VARIÁVEIS COMPOSTAS: DICIONÁRIOS
 
+Dicionários permitem a existência de keys literais (personalização de índices)
+
+Uma maneira de criar os dicionários é:
+
+    dados = {'nome': 'Pedro', 'idade': 25}
+    print(dados[nome], dados[idade])
+
+Para a criação de valores que ainda não existem, é diferente de um .append(), basta criá-los:
+
+    dados['sexo'] = 'M'
+    dados = {'nome': 'Pedro', 'idade': 25, 'sexo': 'M'}
+
+Para remover elementos, use:
+
+    del dados['idade']
+
+Com sua estrutura, você manuseia itens, chaves ou valores.
+
+    print(dados.items())  # anuncia a key e o valor (funciona como um enumerate() numa iteração for in)
+    print(dados.keys())   # anunia a key
+    print(dados.values()) # anunia o valor
+
+As variáveis compostas podem se misturar:
+
+    locadora = {
+    ['titulo': 'Star Wars', 'ano': 1977, 'diretor': 'George Lucas']
+    ['titulo': 'Avengers', 'ano': 2012, 'diretor': 'Joss Whedon']
+    ['titulo': 'Matrix', 'ano': 1999, 'diretor': 'Wachowski']
+    }
+
+    print(locadora[0]['ano'])    # 1977
+    print(locadora[2]['titulo']) # Matrix
+
+No dicionário, não existe slicing, mas o método .copy():
+
+    informações = dados.copy()

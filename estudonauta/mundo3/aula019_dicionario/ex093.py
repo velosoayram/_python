@@ -4,3 +4,18 @@
 # No final, tudo isso será guardado num dicionário, incluindo o total de gols
 # feitos durante o campeonato.
 
+jogador = {'NOME': str(input('NOME: ')).strip().title()}
+x = int(input(f'Quantas partidas {jogador['NOME']} jogou? '))
+gol = [int(input(f'Gols feitos na partida {i+1}: ')) for i in range(x)]
+y = sum(gol)
+jogador['GOLS'] = gol[:]
+jogador['TOTAL'] = y
+print()
+print(jogador)
+print()
+for j, k in jogador.items():
+    print(f'{j} | {k}')
+print()
+print(f'O jogador {jogador["NOME"]} fez {jogador["TOTAL"]} gols.')
+for l, m in enumerate(jogador['GOLS']):
+    print(f'Na partida {l+1} -> {m}')
