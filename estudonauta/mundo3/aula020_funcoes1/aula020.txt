@@ -1,0 +1,19 @@
+FUNÇÕES: def function(pt1) 
+
+Em qualquer linguagem de programação, incluindo o Python, funções estão atreladas às rotinas.
+
+Funções são, nada além, a otimização das rotinas.
+
+Podem ter parâmetros, ou não:
+
+    def soma(a, b):
+        s = a + b
+        print(s)
+
+    def linha():
+        print('--------------')
+
+As funções, em Python, possuem uma característica cahamada empacotamento:
+
+    def contador(*num): # o asterisco possuí finalidade de desempacotar inúmeros parâmetros, ou seja,
+                        # não importa a função estar pré-definida a receber uma exata quantidade.

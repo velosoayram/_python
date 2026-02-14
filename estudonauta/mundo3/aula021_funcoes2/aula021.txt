@@ -1,0 +1,86 @@
+FUNÇÕES: def function(pt2)
+
+Interactive Help: 
+
+    ao estar no Python Console, utilize "help()" no terminal para acessar o modo,
+    já para sair, basta digitar "exit()".
+
+    também é possível usar o help(something) no própio arquivo .py e gerar algum
+    resultado no terminal.
+
+    outras maneira de se utilizar o help(), sem ele de fato, é imprimindo seu doc
+    por meio de um método específico:
+
+        print(input.__doc__)
+
+Docstrings:
+
+    importante para, por exemplo, documentar uma função que você tenha criado
+    e que terceiros terão de utilizar, iniciadas com aspas triplas:
+
+    def cont(a, b, c):
+    """
+        Função que faz uma contagem e a mostra seguindo tais variáveis:
+        parâmetro a -> início
+        parâmetro b -> fim
+        parâmetro c -> passo
+    """
+    x = i
+    while x <= b:
+        print(f'{x}', end = ' ')
+        x += c
+    print('end')
+
+Argumentos Opcionais:
+
+    ao pré-definir uma função, utiliza-se parâmetros, ou não.
+    igualar os parâmetros a "=0" impedem da função executar um erro
+    e criam um parâmetro opcional.
+
+    def somar(a, b, c=0):
+        s = a + b + c
+        print(s)
+
+    somar(2, 4)      # este chamado não apresentaria quaisquer erros, apenas o entregaria resultado 6
+
+    OBS: para infinitos/inúmeros parâmetros, use o empacotamento com "def function(*n):"
+
+Escopo de Variáveis:
+
+    na programação, escopo é o local onde a variável reside, ou não.
+
+    def teste(n):
+        x = 5
+        print(n)
+
+    n = 3
+    teste(n)
+
+    # toda função acima é o escopo global, todavia, "x = 5" seria um escopo local
+    # onde jamais seria possível buscá-lo no programa principal
+
+    todavia, é possível definir uma variável como "global" dentro do escopo local:
+
+    def teste(n):
+        global n
+        n = 5
+        print(n)
+
+    n = 3
+    teste(n)
+
+    # o print() aqui retornaria 5, não mais 3
+
+Retorno de Resultados:
+
+    funções podem imprimir itens, mas podem também somente guardá-los na memória usando "return":
+
+    def somar(*n):
+    soma = 0
+        for num in n:
+            soma += num
+        return soma
+    
+    r1 = somar(1, 5, 4)
+    r2 = somar(4, 3)
+    r3 = somar()
